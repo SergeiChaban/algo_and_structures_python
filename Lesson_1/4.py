@@ -8,3 +8,34 @@
 то вводятся эти символы. Программа должна вывести на экран любой
 символ алфавита от 'a' до 'f' включительно.
 """
+
+from random import random
+
+left = int(input('Минимальная граница, целое число: '))
+right = int(input('Максимальная граница, целое число: '))
+numb = int(random() * (right - left + 1)) + left
+print('Случайное целое число: ', numb)
+
+left = float(input('Минимальная граница, дробное число, разделитель (.): '))
+right = float(input('Максимальная граница, дробное число, разделитель (.): '))
+numb = random() * (right - left) + left
+print('Случайное вещественное число: ', round(numb, 3))
+
+
+a = input('Введите две буквы в английской раскладке. Введите первую ')
+b = input('Введите вторую букву ')
+a = a.lower()
+b = b.lower()
+
+abc = (ord(a))
+abc = abc - 96
+
+abc2 = ord(b)
+abc2 = abc2 - 96
+
+numb = int(random() * (abc - abc2 + 1)) + abc2
+numb = chr(numb + 96)
+
+print('Случайный символ: ', numb)
+
+
