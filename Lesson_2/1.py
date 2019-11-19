@@ -9,3 +9,35 @@
 Также сообщать пользователю о невозможности деления на ноль,
 если он ввел 0 в качестве делителя.
 """
+
+while True:
+
+    digit1 = input('Введите положительное или отрицательное число')
+    digit2 = input('Введите второе положительное или отрицательное число')
+    operation_sign = input('Введите операцию над числами (+, -, *, /) или 0 чтобы все остановить')
+    if operation_sign == '0':
+        break
+
+    try:
+        digit1 = int(digit1)
+        digit2 = int(digit2)
+    except ValueError:
+        print("\nВведено неверное значение! Попробуйте снова!")
+    else:
+
+        if operation_sign in ('+', '-', '*', '/'):
+            if operation_sign == '+':
+                print(f'{digit1 + digit2}')
+            elif operation_sign == '-':
+                print(f'{digit1 - digit2}')
+            elif operation_sign == '*':
+                print(f'{digit1 * digit2}')
+            elif operation_sign == '/':
+                try:
+                    print(f'{digit1 / digit2}')
+                except ZeroDivisionError:
+                    print('Деление на ноль')
+
+        else:
+            print('\nНеверный знак операции!')
+

@@ -3,3 +3,19 @@
 натуральных чисел выполняется равенство: 1+2+...+n = n(n+1)/2,
  где n - любое натуральное число.
 """
+
+
+def sum(n):
+    n1 = n * (n + 1) / 2
+    result = 0
+    for i in range(1, n + 1):
+        result = result + n
+        n -= 1
+    print(result)
+    if result == n1:
+        print('Равенство')
+
+
+n = int(input('Введите число'))
+sum(n)
+
