@@ -14,14 +14,22 @@ for i in range(x):
 numb = int(numb)
 print(numb)
 
-def rec(numb, x):
-    z = 0
+z = 0
+
+
+def rec(numb, x, z):
+
     while x > 0:
         numb1 = numb % 10
         if numb1 == y:
             z += 1
-        rec(numb // 10, x - 1)
+        rec(numb // 10, x - 1, z)
+        return(x)
     print(z)
+    quit()
 
 
-rec(numb, x)
+if x == 0:
+    exit()
+
+rec(numb, x, z)
