@@ -5,3 +5,18 @@
 (или 0, 3, 4, 5 - если индексация начинается с нуля),
 т.к. именно в этих позициях первого массива стоят четные числа.
 """
+from random import random
+
+m = []
+n = []
+N = 20
+
+
+for a in range(N):
+    rand_m = int(random() * 10)
+    m.append(rand_m)
+print(m)
+for i in range(N):
+    if m[i] % 2 == 0:
+        n.append(i)
+print(n)

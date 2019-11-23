@@ -7,7 +7,7 @@ N = 20
 f = 0
 f2 = 0
 max_num = 0
-min_num = 0
+min_num = 100
 count_max = 0
 count_min = 0
 x1 = 0
@@ -25,16 +25,18 @@ for second_num in range(0, N):
             max_num = m[second_num]
             x1 = second_num
             f = count_max
-    if second_num > 0:
-        if m[second_num] > min_num:
-            count_min += 1
-            if count_min > f2:
-                min_num = m[second_num]
-                x2 = second_num
-                f2 = count_min
+
+
+    if min_num > m[second_num]:
+        count_min += 1
+        min_num = m[second_num]
+        x2 = second_num
+        f2 = count_min
+
 
 print(max_num, min_num)
-# m[x1] = m[x2]
-# print(m)
-m[x2] = m[x1]
+m[x1] = min_num
+m[x2] = max_num
+
+
 print(m)
