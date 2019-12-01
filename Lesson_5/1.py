@@ -8,3 +8,25 @@
 # Дмитрий, возвращаясь к доделыванию less4 я не выполнил git add и commit в less5.
 # В результате в less5 все потеряно. Сегодня повторить уже не успею - форсмажер.
 # Написать все заново сегодня уже не смогу. Прошу дать возможность исправиться
+import collections
+
+q = 4
+profit = collections.Counter()
+quantity = int(input('Введите кол-во предприятий  '))
+av_profit = 0
+
+for n in range(1, quantity + 1):
+    a = 0
+    for m in range(q):
+        s_profit = int(input(f'Введите прибыль для {m} квартала {n} компании '))
+        profit[n] += s_profit
+    # profit[n] = a
+    print(profit)
+    av_profit = av_profit + profit[n]
+a = av_profit / quantity
+print(f'Средняя прибьль {a}')
+for x in range(1, quantity + 1):
+    if profit[x] > a:
+        print(f'Средняя прибыль компании {x} равна {profit[x]}, это выше среднего')
+    else:
+        print(f'Средняя прибыль компании {x} равна {profit[x]}, это ниже среднего')
