@@ -18,7 +18,6 @@ for n in range(1, quantity + 1):
     for m in range(1, q + 1):
         s_profit = int(input(f'Введите прибыль для {m} квартала {n} компании '))
         profit[n] += s_profit
-    # profit[n] = a
     print(profit)
     av_profit = av_profit + profit[n]
 a = av_profit / quantity
