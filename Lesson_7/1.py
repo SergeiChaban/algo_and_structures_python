@@ -17,13 +17,16 @@ print(f'Исходный массив {m}')
 
 def bubble(*args, **kwargs):
     x = 0
+    y = len(m)
     while x < len(m):
-        for n in range(len(m)-1):
+        y = y - 1
+        for n in range(y):
             if m[n] > m[n + 1]:
                 m[n], m[n + 1] = m[n + 1], m[n]
-                print(m)
+                print(m, n, y)
         x = x + 1
     print(f'Закончили {m}')
+
 
 
 bubble(m)
