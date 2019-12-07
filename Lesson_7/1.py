@@ -4,3 +4,28 @@
 исходный и отсортированный массивы. Сортировка должна быть реализована в
 виде функции. По возможности доработайте алгоритм (сделайте его умнее).
 """
+
+import random
+
+m = []
+
+for a in range(10):
+    rand_m = int(random.randint(-100, 100))
+    m.append(rand_m)
+print(f'Исходный массив {m}')
+
+
+def bubble(*args, **kwargs):
+    x = 0
+    while x < len(m):
+        for n in range(len(m)-1):
+            if m[n] > m[n + 1]:
+                m[n], m[n + 1] = m[n + 1], m[n]
+                print(m)
+        x = x + 1
+    print(f'Закончили {m}')
+
+
+bubble(m)
+
+
