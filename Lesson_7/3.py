@@ -6,3 +6,16 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
  который не рассматривался на уроках
 """
+import numpy as np
+from random import random
+
+
+m = []
+for a in range(10):
+    rand_m = int(random() * 50)
+    rand_m = rand_m * 2 + 1
+    m.append(rand_m)
+print(f'Исходный массив {m}')
+
+med_m = np.median(m)
+print(med_m)
