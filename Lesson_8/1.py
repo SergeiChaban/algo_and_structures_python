@@ -65,25 +65,25 @@
 text = 'beep boop beer!'
 
 
-class Node:
+class Knote:
     def __init__(self, left=None, right=None):
         self.left = left
         self.right = right
 
-    def children(self):
+    def child(self):
         return self.left, self.right
 
 
-def make_huffman_tree(node, code=''):
+def m_h_tree(node, code=''):
     if type(node) is str:
         return {
             node: code
         }
-    l, r = node.children()
+    l, r = node.child()
 
     result = {}
-    result.update(make_huffman_tree(l, code + '0'))
-    result.update(make_huffman_tree(r, code + '1'))
+    result.update(m_h_tree(l, code + '0'))
+    result.update(m_h_tree(r, code + '1'))
 
     return result
 
@@ -102,9 +102,9 @@ while len(tree) > 1:
     char2, count2 = tree[-2]
     tree = tree[:-2]
     tree.append(
-        (Node(char1, char2), count1 + count2)
+        (Knote(char1, char2), count1 + count2)
     )
-code_table = make_huffman_tree(tree[0][0])
+code_table = m_h_tree(tree[0][0])
 
 coded = []
 for char in text:
